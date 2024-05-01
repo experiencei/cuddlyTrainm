@@ -7,6 +7,7 @@ export default function Home() {
   return (
     <h1 className="text-xl font-medium">
       <RegisterLink>Sign up</RegisterLink>
+      <LoginLink>Sign in</LoginLink>
     </h1>
   );
 }
