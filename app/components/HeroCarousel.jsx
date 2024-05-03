@@ -1,25 +1,23 @@
 import EmblaCarousel from "./EmblaCarousel"
 
 const OPTIONS = { loop: true }
-const SLIDE_COUNT = 5
-const SLIDES = [1 , 2 , 3 , 5 , 5]
 
-[
+ const SLIDES = [
   {
     imgurl: "/assets/images/Events.jpg",
     text: "Discover your city&apos;s best events & experience"
   },
   {
     imgurl: "/assets/images/Events.jpg",
-    text: "Discover your city&apos;s best events & experience"
+    text: "Explore unforgettable experiences near you"
   },
   {
     imgurl: "/assets/images/Events.jpg",
-    text: "Discover your city&apos;s best events & experience"
+    text: "Discover hidden gems and local favorites"
   },
   {
     imgurl: "/assets/images/Events.jpg",
-    text: "Discover your city&apos;s best events & experience"
+    text: "Create experiences you'll never forget"
   },
 ]
 

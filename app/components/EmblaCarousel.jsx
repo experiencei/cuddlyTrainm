@@ -3,6 +3,8 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
+import Image from 'next/image'
+
 import {
   NextButton,
   PrevButton,
@@ -62,10 +64,20 @@ const EmblaCarousel = (props) => {
     <div className="embla">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
-          {slides.map((index) => (
-            <div className="embla__slide" key={index}>
+          {slides.map(({imgurl , text}) => (
+            <div className="embla__slide" key={text}>
               <div className="embla__slide__number">
-                <span>{index + 1}</span>
+              <div className="relative flex items-center aspect-ratio w-90">
+      <Image
+        src={imgurl}
+              alt="hero"
+              width={1000}
+              height={800}
+              className="max-h-[80vh] object-contain object-center 2xl:max-h-[50vh] pt-3 rounded-md"
+      />
+      <h1 className="absolute text-4xl bottom-16 left-14 justify-center items-center text-center text-white font-bold pb-4">
+      {text}</h1>
+      </div>
               </div>
             </div>
           ))}
