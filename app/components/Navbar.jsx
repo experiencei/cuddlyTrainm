@@ -5,6 +5,7 @@ import Link from "next/link";
 import MobileLogo from "../../public/assets/icons/logo.svg"
 import DesktopLogo from "../../public/assets/icons/logoDesktop.svg"
 
+import { Separator } from "@/components/ui/separator"
 
 
 
@@ -23,7 +24,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-
+import Searchbar  from "../../app/components/Searchbar"
 
 export function Navbar() {
 const { user, isLoading } = useKindeBrowserClient();
@@ -48,7 +49,7 @@ const { user, isLoading } = useKindeBrowserClient();
           />
         </Link>
       </div>
-
+      <Searchbar/>
       <div className="hidden md:block">
         <nav aria-label="Global">
         {/* <DropdownMenu>
@@ -157,7 +158,9 @@ const { user, isLoading } = useKindeBrowserClient();
       </div>
     </div>
   </div>
+  <Separator classname="pt-18"/>
 </header>
+
   );
 }
 
