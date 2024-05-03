@@ -1,13 +1,11 @@
 import {RegisterLink, LoginLink} from "@kinde-oss/kinde-auth-nextjs/components";
-
-{/* <LoginLink>Sign in</LoginLink>
-<RegisterLink>Sign up</RegisterLink> */}
+import { Button } from "@/components/ui/button";
+import MobileLogo from "../public/assets/icons/logo.svg"
 
 export default function Home() {
   return (
-    <h1 className="text-xl font-medium">
-      <RegisterLink>Sign up</RegisterLink>
-      <LoginLink>Sign in</LoginLink>
+    <h1 className="flex items-center justify-between container mx-auto px-5 lg:px-10 py-5 text-xl font-medium bg-red w-78 h-56 ">
+     
     </h1>
   );
 }

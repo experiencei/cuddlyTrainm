@@ -7,15 +7,20 @@
     ],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": false,
+    "strict": true,
     "noEmit": true,
-    "incremental": true,
-    "module": "esnext",
     "esModuleInterop": true,
-    "moduleResolution": "node",
+    "module": "esnext",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
+    "incremental": true,
+    "paths": {
+      "@/*": [
+        "./*"
+      ]
+    },
     "plugins": [
       {
         "name": "next"
@@ -24,10 +29,10 @@
   },
   "include": [
     "next-env.d.ts",
-    ".next/types/**/*.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "app/(auth)/sign-up/[[...sign-up]]/page.jsx", "app/(auth)/sign-in/[[...sign-in]]/page.jsx", "app/(auth)/layout.jsx"  ],
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+, "app/(root)/restaurants/create/page.jsx", "app/layout.jsx"  ],
   "exclude": [
     "node_modules"
   ]
