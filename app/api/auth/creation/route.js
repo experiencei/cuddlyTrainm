@@ -1,6 +1,6 @@
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { NextResponse } from "next/server";
-import supabase from "../../../../utils/supabase/client"
+import { supabase } from "../../../../utils/supabase/client"
 
 export async function GET() {
   const { getUser } = getKindeServerSession();
@@ -12,13 +12,12 @@ export async function GET() {
   }
 
   
-let { dbUser: User_Information } = await supabase
-.from('User_Information')
-.select('id')
+// let { dbUser: User_Information } = await supabase
+// .from('User_Information')
+// .select('id')
 
+// console.log(User_Information)
 
-
-if (!User_Information) {
 const { data, error } = await supabase
 .from('User_Information')
 .insert([
@@ -32,7 +31,14 @@ const { data, error } = await supabase
  },
 ])
 .select()
-        
+
+          
+if(data) {
+  console.log("Succesfully" , data);
 }
+if(error) {
+  console.log("Error" , error);
+}
+
   return NextResponse.redirect("http://localhost:3000");
 }

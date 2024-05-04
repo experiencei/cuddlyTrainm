@@ -3,6 +3,7 @@ import * as React from "react"
 import Eventcard from './Eventcard'
 
 import { Card, CardContent } from "@/components/ui/card"
+
 import {
   Carousel,
   CarouselContent,
