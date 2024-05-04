@@ -73,7 +73,7 @@ const EmblaCarousel = (props) => {
               alt="hero"
               width={1000}
               height={800}
-              className="max-h-[80vh] object-contain object-center 2xl:max-h-[50vh] pt-3 rounded-md"
+              className="max-h-[80vh] object-contain object-center 2xl:max-h-[50vh] pt-3 sm-pt-10 rounded-md"
       />
       <h1 className="absolute text-4xl bottom-16 left-14 justify-center items-center text-center text-white font-bold pb-4">
       {text}</h1>
