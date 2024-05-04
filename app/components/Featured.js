@@ -1,6 +1,5 @@
 import React from 'react'
 import Seperator from './Seperator'
-import Eventcard from './Eventcard'
 import { CarouselDApiDemo}from './FeaturedCarousel'
 
 

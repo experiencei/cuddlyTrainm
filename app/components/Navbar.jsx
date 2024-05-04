@@ -162,7 +162,7 @@ const { user, isLoading } = useKindeBrowserClient();
       </div>
     </div>
   </div>
-  <Separator classname="pt-18"/>
+  <Separator className="pt-18"/>
 </header>
 
   );

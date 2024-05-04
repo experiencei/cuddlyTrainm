@@ -29,8 +29,10 @@ export function CarouselDApiDemo() {
     })
   }, [api])
 
+  // the horizontal scrolling results from here the first div and carousel classname
+
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto overflow-x-flow">
       <Carousel setApi={setApi} className="w-full flex">
         <CarouselContent>
           {Array.from({ length: 5 }).map((_, index) => (
