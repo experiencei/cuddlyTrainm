@@ -2,31 +2,8 @@
 import React from 'react'
 
 
-import { TypewriterEffectSmooth } from "../../components/ui/typewritter-effect";
 
 const Searchbar = () => {
-  const words = [
-    {
-      text: "Search Events",
-    },
-    {
-      text: "Search Movies",
-      className: "text-[cb202d]",
-    },
-    {
-      text: "Lookup Cinema",
-      className: "text-[cb202d]",
-    },
-    {
-      text: "Search location..",
-    },
-    {
-      text: "Aceternity.",
-      className: "text-blue-500 dark:text-blue-500",
-    },
-  ];
-
-
 
   return (
     

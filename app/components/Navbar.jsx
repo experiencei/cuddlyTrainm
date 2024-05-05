@@ -37,13 +37,17 @@ export function Navbar() {
               <Image
                 src={DesktopLogo}
                 alt="Desktop Logo"
-                className="w-32 hidden lg:block"
+                width={40}
+                height={120}
+                className="w-32 h-14 hidden lg:block"
               />
 
               <Image
                 src={MobileLogo}
                 alt="Mobile Logo"
-                className="block lg:hidden w-12"
+                width={40}
+                height={120}
+                className="block lg:hidden w-10 h-8"
               />
             </Link>
           </div>
