@@ -4,6 +4,8 @@ import React from 'react'
 import Seperator from './Seperator'
 
 const Exploreall = () => {
+
+  
   return (
     <>
     <Seperator seperate={"EXPLORE ALL EVENT"}/>

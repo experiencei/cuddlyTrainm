@@ -1,4 +1,5 @@
 'use client'
+import { supabase } from "@/utils/supabase/client"
 
 import Image from "next/image";
 import Link from "next/link";
@@ -14,6 +15,7 @@ import {
   LoginLink,
   LogoutLink,
 } from "@kinde-oss/kinde-auth-nextjs/components";
+
 import {useKindeBrowserClient} from "@kinde-oss/kinde-auth-nextjs";
 
 import {

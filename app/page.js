@@ -6,7 +6,7 @@ import Featured from "../app/components/Featured"
 import PlanningFor from "../app/components/PlanningFor"
 import EventReel from "../app/components/EventReel"
 import Exploreall from "../app/components/Exploreall"
-import { ComboBoxResponsive } from "../app/components/CinemaList"
+
 
 export default function Home() {
   return (
