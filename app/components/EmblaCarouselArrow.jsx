@@ -1,5 +1,7 @@
 "use client"
 
+// import from embla library to make the scrolling works
+
 import React, { useCallback, useEffect, useState } from 'react'
 
 export const usePrevNextButtons = (emblaApi, onButtonClick) => {

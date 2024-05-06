@@ -1,11 +1,12 @@
 'use client'
 
 import Link from 'next/link'
-import EventListing  from "./EventLisitng"
 import Seperator from './Seperator'
 import Eventcard from './Eventcard'
 
 
+// the categories component that will display the events based on categories and can be click to list all the events based on the catogories to explore all
+// the limit is set to four events of the categories and onclick of explore all can be lead to explore all part
 
 const FALLBACK_LIMIT = 4
 
@@ -42,6 +43,7 @@ const EventReel = (props) => {
       <div className='relative'>
         <div className='mt-6 flex items-center w-full'>
           <div className='w-full grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-4 md:gap-y-10 lg:gap-x-8'>
+            {/* map is a false count to loop the eventcard componenets */}
             {map.map((i) => (
               <Eventcard
                 key={`product-${i}`}

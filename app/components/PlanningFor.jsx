@@ -2,8 +2,11 @@ import React from 'react'
 import Seperator from './Seperator'
 import Sortinggrid from './Sortinggrid'
 
-
+// planning for buttton for section for displayng events based on today or not today 
 const PlanningFor = () => {
+
+  // the icons is passed down to sorting grid for display which the icons will need to be change
+
   const items = [
     { id: 1, icon: <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="12" height="12"><path d="M24,7.64v8.666c0,.635-.353,1.206-.92,1.489-.238,.119-.493,.177-.747,.177-.353,0-.702-.113-.997-.334l-2.336-2.327v.19c0,2.481-2.019,4.5-4.5,4.5H4.5c-2.481,0-4.5-2.019-4.5-4.5v-7c0-2.481,2.019-4.5,4.5-4.5H14.5c2.481,0,4.5,2.019,4.5,4.5v.157l2.281-2.301c.563-.428,1.23-.489,1.799-.205,.568,.284,.92,.854,.92,1.489Zm-6,.86c0-1.93-1.57-3.5-3.5-3.5H4.5c-1.93,0-3.5,1.57-3.5,3.5v7c0,1.93,1.57,3.5,3.5,3.5H14.5c1.93,0,3.5-1.57,3.5-3.5v-7Zm5-.86c0-.257-.138-.48-.368-.595-.23-.115-.491-.091-.697,.062l-2.936,2.97v3.821l2.989,2.986c.152,.108,.412,.133,.643,.017,.23-.115,.368-.337,.368-.595V7.64Z"/></svg>
     , title: 'Today' },

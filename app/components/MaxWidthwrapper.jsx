@@ -1,5 +1,6 @@
 import { cn } from '@/lib/utils'
 
+// The maxwidthwrapper for keeping components to a certain width and if needs be for readjustments
 
 const MaxWidthWrapper = ({
   className,

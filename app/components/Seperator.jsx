@@ -1,5 +1,7 @@
 import React from 'react'
 
+// sepearator componenet for seperation 
+
 const Seperator = ({seperate}) => {
   return (
     <div className='lg:pt-6 lg:pb-6'>

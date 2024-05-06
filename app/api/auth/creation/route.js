@@ -11,9 +11,7 @@ export async function GET() {
     throw new Error("Something went wrong, i am srorry....");
   }
 
-  // console.log(user);
-  // find user from db
-
+  // Getting the users information details from kinde and writing straight to the database(supabase)
   let { data: User_Information } = await supabase
   .from('User_Information')
   .select('*')
@@ -39,5 +37,6 @@ if(error) {
   console.log("Error" , error);
 }
 
+  // route handler which route directly to the homepage after successful login and saving to database
   return NextResponse.redirect("http://localhost:3000");
 }

@@ -1,5 +1,8 @@
 import React from 'react'
 
+
+// The cinema components that needs to display lists of the cinemas which need fine tune styling and great aesthetic few
+
 const CinemaList = () => {
 
 

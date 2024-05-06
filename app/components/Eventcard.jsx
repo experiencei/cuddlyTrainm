@@ -2,6 +2,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
+// Events cards that display the events based on Name , date and price and definitely need core styling and adjustment
+
 const Eventcard = ({EventName , EventDate , Eventprice}) => {
   return (
     <div>

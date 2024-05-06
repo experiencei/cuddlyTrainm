@@ -6,11 +6,16 @@ import { usePathname, useSearchParams } from "next/navigation";
 import { cn } from "@/lib/utils"
 import Link from "next/link";
 
+// the sorting grid components for filtering and sorting data and readjusting the searchparams url
+
+// onclick of the button reassign the pathname to what buttons you clicks
+
 const IconGrid = ({ items }) => {
   const searchParams = useSearchParams();
   const search = searchParams.get("filter");
   const pathname = usePathname();
 
+  // it create a querystring a click of the button
   const createQueryString = useCallback(
     (name, value) => {
       const params = new URLSearchParams(searchParams.toString());

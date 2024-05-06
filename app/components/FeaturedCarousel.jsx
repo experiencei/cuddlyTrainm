@@ -4,6 +4,9 @@ import Eventcard from './Eventcard'
 
 import { Card, CardContent } from "@/components/ui/card"
 
+// The Carousel that was used in the featured for displaying the featured events ,
+// it was gotten from sahdcn ui and render the eventCard fives times through a dummy Array map(5)
+
 import {
   Carousel,
   CarouselContent,

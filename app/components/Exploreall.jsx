@@ -3,6 +3,10 @@ import Link from 'next/link'
 import React from 'react'
 import Seperator from './Seperator'
 
+
+// Explore all components is the all events lists that will be display regardless of any categories , it will be endless of categories
+// need some great styling and adjustments  for it to look great and better
+
 const Exploreall = () => {
 
   
@@ -10,7 +14,8 @@ const Exploreall = () => {
     <>
     <Seperator seperate={"EXPLORE ALL EVENT"}/>
     <Link href="#" className="group relative block">
-  <div className="relative h-[350px] sm:h-[450px] ring ring-indigo-50 rounded-xl border border-gray-700 bg-gray-800 p-4  ">
+  <div className="relative grid lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-8
+  h-[350px] sm:h-[450px] ring ring-indigo-50 rounded-xl border border-gray-700 bg-gray-800 p-4  ">
    
 
     <Image
