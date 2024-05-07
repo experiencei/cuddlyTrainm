@@ -6,7 +6,7 @@ import Featured from "../app/components/Featured"
 import PlanningFor from "../app/components/PlanningFor"
 import EventReel from "../app/components/EventReel"
 import Exploreall from "../app/components/Exploreall"
-
+import Qrcode from "../app/components/Qrcode"
 
 export default function Home() {
   return (
@@ -35,6 +35,7 @@ export default function Home() {
       {/* Explore all sections is endless list of all the events regardless of sorting or anything which should be responsive according to devices*/}
       <Exploreall/>
       
+      <Qrcode/>
      </MaxWidthWrapper>
     </>
   );
