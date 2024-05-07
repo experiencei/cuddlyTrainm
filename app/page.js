@@ -35,7 +35,10 @@ export default function Home() {
       {/* Explore all sections is endless list of all the events regardless of sorting or anything which should be responsive according to devices*/}
       <Exploreall/>
       
-      <Qrcode/>
+
+      {/* Testing QR code component with input values */}
+      
+      {/* <Qrcode/> */}
      </MaxWidthWrapper>
     </>
   );
