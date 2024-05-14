@@ -22,6 +22,8 @@ import {
   SelectTrigger,
 } from "@/components/ui/select";
 import { Divider } from "@/components/restaurant/atoms/divider";
+import { useSelector } from "react-redux";
+import { selectUser } from "@/slices/userSlice";
 const Page = ({ params }: { params: any }) => {
   const router = useRouter();
   const { cleanUrl } = useUtils();
@@ -38,6 +40,9 @@ const Page = ({ params }: { params: any }) => {
   // const setDate=(value:Date)=>{
   // router.
   // }
+
+  const user = useSelector(selectUser);
+  console.log(user, "user");
   return (
     <div className="bg-black font-outfit">
       <div className="p-2 py-4">

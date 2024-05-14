@@ -2,6 +2,7 @@
 import "./globals.css";
 import localfont from "next/font/local";
 import { Navbar } from "./components/Navbar";
+import { Providers } from "@/components/providers";
 
 const futura = localfont({
   src: [
@@ -34,10 +35,11 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${futura.variable}`}>
         <main className="relative flex flex-col min-h-screen">
-        
-          {/* Navbar is present in the layout because it will be shown on every pages for easier navigation */}
-          <Navbar />
-          <div className="flex-grow flex-1">{children}</div>
+          <Providers>
+            {/* Navbar is present in the layout because it will be shown on every pages for easier navigation */}
+            <Navbar />
+            <div className="flex-grow flex-1">{children}</div>
+          </Providers>
         </main>
       </body>
     </html>
