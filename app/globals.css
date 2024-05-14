@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -50,7 +49,6 @@
   }
 }
 
-
 /* @layer base {
   * {
     @apply border-border;
@@ -69,6 +67,10 @@
   -ms-overflow-style: none;
 }
 
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
 
 .embla {
   max-width: 58rem;
@@ -90,7 +92,7 @@
   flex: 0 0 var(--slide-size);
   min-width: 0;
   padding-left: var(--slide-spacing);
-  width : 80vw
+  width: 80vw;
 }
 .embla__slide__number {
   box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);

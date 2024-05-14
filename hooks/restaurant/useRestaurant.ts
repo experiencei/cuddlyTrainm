@@ -1,7 +1,6 @@
 import { TRestaurant } from "@/types/types";
 import { browserClient } from "@/lib/supabase-browser";
 import * as React from "react";
-import { serverClient } from "@/lib/supabase-server";
 
 interface ILoading {
   getRestaurants: boolean;
@@ -12,8 +11,8 @@ export function useRestaurants() {
   const [restaurant, setRestaurant] = React.useState<TRestaurant>();
   const [trigger, setTrigger] = React.useState<number>(1);
   const [loading, setLoading] = React.useState<ILoading>({
-    getRestaurant: false,
-    getRestaurants: false,
+    getRestaurant: true,
+    getRestaurants: true,
   });
   const fetchRestaurants = async () => {
     setLoadingHandler("getRestaurants", true);
@@ -32,10 +31,11 @@ export function useRestaurants() {
   };
   const fetchRestaurant = async (name: string) => {
     setLoadingHandler("getRestaurant", true);
+
     const { data, error } = await browserClient
       .from("Restaurant_List")
       .select("*")
-      .eq("Restaurant_List.name", name)
+      .eq("name", name)
       .single();
     if (data || !error) {
       setLoadingHandler("getRestaurant", false);

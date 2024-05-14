@@ -1,40 +1,32 @@
-import { serverClient } from "@/lib/supabase-server";
+import * as React from "react";
+import serverClient from "@/lib/supabase-server";
 import { TRestaurant } from "@/types/types";
 import type { Metadata, ResolvingMetadata } from "next";
-
-// export const metadata: Metadata = {
-//   title: "Store - Jadedval",
-//   description:
-//     "Welcome to Jade D’Val  E-commerce platform where you can sell your products. Please setup your store.",
-// };
-type Props = {
-  params: { restaurant: string };
-};
+import Helmet from "react-helmet";
+import { browserClient } from "@/lib/supabase-browser";
+import { usePathname } from "next/navigation";
 
 export async function generateMetadata(
-  { params }: Props,
+  { params }: { params: { restaurant: string } },
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   // read route params
-  const name = params.restaurant;
-
-  // fetch data
-  const restaurant: TRestaurant | any = await serverClient
+  const name = params.restaurant.replace(/%20/g, " ").replace(/%/g, "");
+  const res: TRestaurant | any = await serverClient
     .from("Restaurant_List")
-    .select("&")
+    .select("*")
     .eq("name", name)
-    // .single();
+    .single();
 
+  console.log(res);
+  // optionally access and extend (rather than replace) parent metadata
   const previousImages = (await parent).openGraph?.images || [];
-console.log(restaurant,restaurant)
-  if (restaurant) {
-    console.log(restaurant);
-    const name =
-      restaurant.name.charAt(0).toUpperCase() + restaurant.name.slice(1);
+
+  if (res.data && !res.error) {
     return {
-      title: ` ${name}`,
-      description: name + restaurant.about,
-      keywords: `${name} , ${name} ,${name} ,  peony`,
+      title: `${res.data.name}`,
+      description: `${res.data.about}`,
+      keywords: `${res.data.name} ,${res.data.address} , ${res.data.about}, peony`,
       openGraph: {
         images: ["/some-specific-page-image.jpg", ...previousImages],
       },
@@ -43,9 +35,11 @@ console.log(restaurant,restaurant)
     return { title: "Not found", description: "Page not found" };
   }
 }
-export default function RootLayout({
+export default async function RootLayout({
+  params,
   children,
 }: Readonly<{
+  params: { restaurant: string };
   children: React.ReactNode;
 }>) {
   return <div className=" ">{children}</div>;
