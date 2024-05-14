@@ -1,5 +1,6 @@
 "use client"
 
+// The emblacaroulsel Component is import from embla library for Carousel display and i passed down the graphics that portray the platform
 import React, { useCallback, useEffect, useState } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
@@ -10,6 +11,7 @@ import {
   PrevButton,
   usePrevNextButtons
 } from './EmblaCarouselArrow'
+
 
 const EmblaCarousel = (props) => {
   const { slides, options } = props

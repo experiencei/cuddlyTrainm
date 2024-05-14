@@ -8,29 +8,26 @@ export async function GET() {
   const user = await getUser();
 
   if (!user || user === null || !user.id) {
-    throw new Error("Smoething went wrong, i am srorry....");
+    throw new Error("Something went wrong, i am srorry....");
   }
 
-  
-// let { dbUser: User_Information } = await supabase
-// .from('User_Information')
-// .select('id')
+  // Getting the users information details from kinde and writing straight to the database(supabase)
+  let { data: User_Information } = await supabase
+  .from('User_Information')
+  .select('*')
+          
+console.log(User_Information) 
 
-// console.log(User_Information)
-
+// create user if it doesn't exit
 const { data, error } = await supabase
 .from('User_Information')
 .insert([
-  { 
-  user_email: user.email ?? "",
-  id: user.id,
-  profileImage: user.picture ?? `https://avatar.vercel.sh/${user.given_name}`,
-  firstName: user.given_name ?? "",
-  lastName: user.family_name ?? "",
-
- },
+  { some_column: 'someValue' },
+  { some_column: 'otherValue' },
 ])
 .select()
+
+
 
           
 if(data) {
@@ -40,5 +37,6 @@ if(error) {
   console.log("Error" , error);
 }
 
+  // route handler which route directly to the homepage after successful login and saving to database
   return NextResponse.redirect("http://localhost:3000");
 }

@@ -3,6 +3,7 @@ import Seperator from './Seperator'
 import { CarouselDApiDemo}from './FeaturedCarousel'
 
 
+// The components for featured part for the iconic and trending events , which uses Carousel api for the carousel
 
 const Featured = () => {
   return (

@@ -1,4 +1,5 @@
-"use client";
+'use client'
+import { supabase } from "@/utils/supabase/client"
 
 import Image from "next/image";
 import Link from "next/link";
@@ -12,7 +13,7 @@ import {
   LoginLink,
   LogoutLink,
 } from "@kinde-oss/kinde-auth-nextjs/components";
-import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
+import {useKindeBrowserClient} from "@kinde-oss/kinde-auth-nextjs";
 
 import {
   DropdownMenu,
@@ -23,6 +24,11 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 import Searchbar from "../../app/components/Searchbar";
+
+// This the navbar that render the navigation based on click and presence of users , 
+// getting the userdata from kinde to render appropiate links and dropdown
+//rendering logo base on devices as well
+//search is imported for display
 
 export function Navbar() {
   const { user, isLoading } = useKindeBrowserClient();
@@ -196,7 +202,7 @@ export function Navbar() {
           </div>
         </div>
       </div>
-      <Separator classname="pt-18" />
+      <Separator className="pt-18" />
     </header>
   );
 }

@@ -2,6 +2,8 @@
 import React from 'react'
 
 
+// searchbar components for searching but no functionality yet
+// if styling needs be readjusted 
 
 const Searchbar = () => {
 

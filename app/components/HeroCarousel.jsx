@@ -1,5 +1,8 @@
 import EmblaCarousel from "./EmblaCarousel"
 
+// This is the components that display the potray images of the images in the carousel , which i used Embla carousel for displaying and passing the images
+// which definately need some sleek styling
+
 const OPTIONS = { loop: true }
 
  const SLIDES = [

@@ -34,6 +34,8 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${futura.variable}`}>
         <main className="relative flex flex-col min-h-screen">
+        
+          {/* Navbar is present in the layout because it will be shown on every pages for easier navigation */}
           <Navbar />
           <div className="flex-grow flex-1">{children}</div>
         </main>
