@@ -1,32 +1,18 @@
-import { NextResponse } from 'next/server'
-import {getKindeServerSession} from "@kinde-oss/kinde-auth-nextjs/server";
- 
-// This function can be marked `async` if using `await` inside
-export  async function middleware(request) {
-  const {isAuthenticated}=getKindeServerSession();
-  if(!(await isAuthenticated())) {
-  return NextResponse.redirect(new URL('/api/auth/login?post_login_redirect_url=/', request.url))
+import { updateSession } from "@/utils/supabase/middleware";
+
+export async function middleware(request) {
+	return await updateSession(request);
 }
-}
- 
-// See "Matching Paths" below to learn more
+
 export const config = {
-  matcher: ['/api/webhook/paystack/:path*', '/api/webhook/flutterwave/:path*']
-}
-
-
-// ['api/webhook/paystack/:path*', 'api/webhook/flutterwave/:path*']
- 
-// // This function can be marked `async` if using `await` inside
-// export async function middleware(request) {
-//     const {isAuthenticated}=getKindeServerSession();
-//     if(!(await isAuthenticated()))
-//     {
-//         return NextResponse.redirect(new URL('/api/auth/login?post_login_redirect_url=/dashboard', request.url))
-//     }
-// }
- 
-// // See "Matching Paths" below to learn more
-// export const config = {
-//   matcher: ['/dashboard/:path*','/create-business'],
-// }
+	matcher: [
+		/*
+		 * Match all request paths except for the ones starting with:
+		 * - _next/static (static files)
+		 * - _next/image (image optimization files)
+		 * - favicon.ico (favicon file)
+		 * Feel free to modify this pattern to include more paths.
+		 */
+		"/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
+	],
+};
